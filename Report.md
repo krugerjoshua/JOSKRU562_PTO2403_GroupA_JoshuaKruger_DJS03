@@ -19,7 +19,3 @@ I've tried to improve the 'Book Connect' code to mak it more structured, easier 
         -  Added the 'updateListButton' function to update the "Show more" button depending on how many books are left.
 
 The redactoring made the code more modular, easier to read and maintain. The code is now more structured and follows best practices. With functions like 'createBookPreview', 'populateDropdown', 'applyThemes', 'toggleOverlay', the code is better organized and adheres to SOLID principles. Making it more robust and scalable. There is some known issues that I did not have enough time to finnish in time, like the pictures not showing and buttons not working when clicked on. I will make sure to address these issues in the next iteration.
-
-
-
-
