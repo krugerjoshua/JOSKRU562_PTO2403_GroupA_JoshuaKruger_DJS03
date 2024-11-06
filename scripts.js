@@ -4,7 +4,7 @@ let page = 1;
 let matches = books;
 
 // Created a function for book preview elements
-const createBookPreview = (author, id, image, title) => {
+const createBookPreview = ({ author, id, image, title }) => {
     const element = document.createElement("button");
     element.classList = "preview";
     element.setAttribute("data-preview", id);
