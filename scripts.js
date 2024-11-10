@@ -199,3 +199,43 @@ document
                 active.description;
         }
     });
+
+    class bookPreview extends HTMLElement {
+        constructor() {
+            super()
+            this.attachShadow({ mode: 'open'})
+        }
+
+    connectedCallback() {
+        this.render()
+    }
+
+    static get observedAttributes() {
+        return ['title', 'author', 'image', 'id']
+    }
+
+    attributeChangedCallback(name, oldValue, newValue) {
+        if (oldValue !== newValue) {
+            this.render()
+        }
+    }
+
+    render() {
+        this.shadowRoot.innerHTML = `
+            <style>
+                .preview { /* Styles for the component */ }
+                .preview__image { /* Styles for image */ }
+                .preview__info { /* Styles for info */ }
+            </style>
+            <button class="preview" data-preview="${this.getAttribute('id')}">
+                <img class="preview__image" src="${this.getAttribute('image')}" />
+                <div class="preview__info">
+                    <h3 class="preview__title">${this.getAttribute('title')}</h3>
+                    <div class="preview__author">${this.getAttribute('author')}</div>
+                </div>
+            </button>
+        `
+    }
+}
+
+customElements.define('book-preview', bookPreview)
